@@ -13,6 +13,7 @@ import {RecipeItemComponent} from './recipe/recipe-list/recipe-item/recipe-item.
 import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective} from './shared/dropdown.directive';
 import { FooterComponent } from './footer/footer.component';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 
 
@@ -32,7 +33,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-data-edit></app-data-edit>
+    <hr>
+    <ul class="list-group">
+      <a class="list-group-item" style="cursor:pointer"
+      *ngFor="let publisher of publishers; let i = index"
+      (click)="onEditItem(i)">
+    {{publisher.name}} ({{publisher.year}})
+    </a>
+    </ul>
+  </div>
+</div>

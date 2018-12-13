@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
+import { Response } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +8,21 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  // @Output() featureSelected = new EventEmitter<string>();
 
-  // onSelect(feature:string){
-  //   this.featureSelected.emit(feature);
-  // }
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService) { }
+
+  onSaveData(){
+    this.dataStorageService.storePerpustakaans()
+      .subscribe(
+        (response: Response) => {
+          console.log(response);
+        }
+      );
+  }
+
+  onFetchData(){
+    this.dataStorageService.getPerpustakaans();
+  }
 
   ngOnInit() {
   }

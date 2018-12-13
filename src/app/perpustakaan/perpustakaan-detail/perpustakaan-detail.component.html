@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="perpustakaan.imagePath" 
+    alt="{{perpustakaan.name}}" 
+    class="img-responsive"
+    style="max-height:300px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{perpustakaan.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">
+        Manage Book <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li> <a (click) ="onAddData()" style="cursor:pointer;"> To Book List</a></li>
+        <li> <a style="cursor:pointer;"(click)="onEditPerpustakaan()"> Edit Book </a></li>
+        <li> <a style="cursor:pointer;"(click)="onDeletePerpustakaan()"> Delete Book </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h5>{{perpustakaan.page}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{perpustakaan.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+
+    <ul class="list-group">
+      <li
+      class="list-group-item"
+      *ngFor="let publisher of perpustakaan.publishers">
+    {{publisher.name}}-{{publisher.year}}
+    </li>
+    </ul>
+  </div>
+</div>
+

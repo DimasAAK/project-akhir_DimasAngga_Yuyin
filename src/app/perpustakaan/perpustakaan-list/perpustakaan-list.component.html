@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewPerpustakaan()">New Book</button>
+        <hr>
+    </div>
+    <hr>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <app-perpustakaan-item 
+        *ngFor="let perpustakaanEL of perpustakaans; let i = index"
+        [perpustakaan]="perpustakaanEL"
+        [index]="i"></app-perpustakaan-item>
+    </div>
+</div>

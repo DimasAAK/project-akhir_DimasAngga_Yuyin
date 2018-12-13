@@ -1,49 +1,58 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipeComponent } from './recipe/recipe.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { PerpustakaanComponent } from './perpustakaan/perpustakaan.component';
+import { DataComponent } from './data/data.component';
 
-import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
-import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
-import {RecipeItemComponent} from './recipe/recipe-list/recipe-item/recipe-item.component';
-import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective} from './shared/dropdown.directive';
+//tambah code berikut
+import { PerpustakaanListComponent } from './perpustakaan/perpustakaan-list/perpustakaan-list.component';
+import { PerpustakaanDetailComponent } from './perpustakaan/perpustakaan-detail/perpustakaan-detail.component';
+//tambah code berkut (2)
+import { PerpustakaanItemComponent } from './perpustakaan/perpustakaan-list/perpustakaan-item/perpustakaan-item.component';
+import { DataEditComponent } from './data/data-edit/data-edit.component';
 import { FooterComponent } from './footer/footer.component';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-
+import { DropdownDirective } from './shared/dropdown.directive';
+import { DataService } from './data/data.service';
+import { PerpustakaanEditComponent } from './perpustakaan/perpustakaan-edit/perpustakaan-edit.component';
+import { PerpustakaanStartComponent } from './perpustakaan/perpustakaan-start/perpustakaan-start.component';
+import { PerpustakaanService } from './perpustakaan/perpustakaan.service';
+import { DataStorageService } from './shared/data-storage.service';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipeComponent,
-    ShoppingListComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingEditComponent,
+    PerpustakaanComponent,
+    DataComponent,
+
+    PerpustakaanListComponent,
+    PerpustakaanDetailComponent,
+    PerpustakaanItemComponent,
+    DataEditComponent,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    FooterComponent
+    PerpustakaanStartComponent,
+    PerpustakaanEditComponent,
+    FooterComponent,
+    HomeComponent,
+    ContactComponent
 ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [DataService, PerpustakaanService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

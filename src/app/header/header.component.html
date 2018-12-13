@@ -1,28 +1,32 @@
-<div class="navbar" navbar-default>
+<div class="navbar" navbar-default style="background-color:black">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Recipe Book</a>
+      <a routerLink="/" class="navbar-brand" style="color:aliceblue">World Library</a>
     </div>
-    <div class="collage navbar-collage">
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+          <li routerLinkActive="active">
+              <a routerLink="/home" style="color:aliceblue">Home</a>
+            </li>
         <li routerLinkActive="active">
-          <!-- <a href="#" (click)="onSelect('recipe')">Recipes</a> -->
-          <a routerLink="/recipes">Recipes</a>
+          <a routerLink="/perpustakaans" style="color:aliceblue">Library</a>
         </li>
         <li routerLinkActive="active">
-          <!-- <a href="#" (click)="onSelect('shopping-list')">Shopping List</a> -->
-          <a routerLink="/shopping-list">Shopping-List</a>
+          <a routerLink="/data" style="color:aliceblue">Book List</a>
         </li>
+        <li routerLinkActive="active">
+            <a routerLink="/contact" style="color:aliceblue">Contact Us</a>
+          </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a style="cursor:pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+          <a style="cursor:pointer; color:aliceblue" class="dropdown-toggle" role="button"> Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor:pointer;">Save data</a>
+              <a style="cursor:pointer;" (click)="onSaveData()">Save Data</a>
             </li>
             <li>
-              <a style="cursor:pointer;">Fetch Data</a>
+              <a style="cursor:pointer;" (click)="onFetchData()">Fetch Data</a>
             </li>
           </ul>
         </li>
